@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import cr.ac.ucr.rickmorty.R;
 import cr.ac.ucr.rickmorty.models.Episode;
 
-public class EpisodesAdapter extends RecyclerView.Adapter<EpisodesAdapter.ViewHolder> implements ItemClickListener{
+public class EpisodesAdapter extends RecyclerView.Adapter<EpisodesAdapter.ViewHolder> implements EpisodeItemClickListener{
 
     private Context context;
     private ArrayList<Episode> episodes;
@@ -85,4 +85,8 @@ public class EpisodesAdapter extends RecyclerView.Adapter<EpisodesAdapter.ViewHo
             listener.onClick(view, getLayoutPosition());
         }
     }
+}
+
+interface EpisodeItemClickListener{
+    void onClick(View view, int position);
 }
